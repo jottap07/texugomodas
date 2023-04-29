@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #292929;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #191919;
+}
+
+header h1 {
+  font-family: 'Sedgwick Ave Display', cursive;
+  color: white;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 415px) {
+  header {
+    justify-content: start;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+}
+
+iframe {
+  flex-grow: 1;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu nav {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  background: #5A5A5A;
+  border-radius: 5px;
+  margin-top: 12px;
+  margin-left: 5px;
+}
+
+.menu nav::before {
+  --size: 15px;
+  position: absolute;
+  content: '';
+  width: var(--size);
+  height: var(--size);
+  transform: rotate(45deg);
+  left: calc(var(--size) / 2.5);
+  top: calc(var(--size) / 2 * -1);
+  background: #5A5A5A;
+  z-index: 0;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Bruno Ace SC';
+  padding: 1rem 1.5rem;
+  z-index: 1;
+  transition: all 500ms ease;
+}
+
+.menu nav a:hover {
+  background: gold;
+  color: black;
+}
+
+.menu nav a:first-child {
+  border-radius: 5px 5px 0 0;
+}
+
+.menu nav a:last-child {
+  border-radius: 0 0 5px 5px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+  vertical-align: middle;
+}
+
+.menu-btn {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 5px;
+  color: gold;
+  border-radius: 5px;
+  transition: all 250ms ease;
+}
+
+.menu-btn:hover {
+  background: gold;
+  color: black;
+}
+
+.menu-btn span {
+  font-size: 2rem;
+}
+
+#menuCloser {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
